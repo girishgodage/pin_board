@@ -38,6 +38,11 @@ class PinsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def upvote
+		@pin.upvote_by current_user
+		redirect_to request.referrer
+	end
+
 	private
 
 	def pin_params
